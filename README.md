@@ -1,15 +1,31 @@
 # Course Factory Lite: challenge task reference
 
-> **This is the full reference project for the FDE Learning Kit challenge task (5b).** Every agent
-> is here, and the sample course `courses/intro-python-lists-hs/` is complete. Your job is to find
-> where depth is lost between the research and the slides, fix the agent where it happens, and
-> prove the change helped. Follow the steps in the
-> [challenge brief](https://github.com/AzurePartnersOrg/fde-learning-kit/blob/main/education-content-creation/05-hands-on-practice/5b-challenge-brief.md)
-> (learning kit, Page 05). Put your evidence in `submission/`, and commit your "before" before
-> you change anything.
->
-> Do not run `/new-course` for this task. The sample course is already built, and a new course
-> costs a lot of tokens.
+> [!IMPORTANT]
+> This repo is for **task 5b** of the FDE Learning Kit. **Start with the kit, not here:** read
+> [Page 05](https://github.com/AzurePartnersOrg/fde-learning-kit/blob/main/education-content-creation/05-hands-on-practice/README.md),
+> then follow the steps in the
+> [5b challenge brief](https://github.com/AzurePartnersOrg/fde-learning-kit/blob/main/education-content-creation/05-hands-on-practice/5b-challenge-brief.md).
+
+## Your task
+
+- **What you get:** the full project. Every agent is here, and the sample course
+  `courses/intro-python-lists-hs/` is complete.
+- **What you do:** find where depth is lost between the research and the slides, fix the agent
+  where it happens, and prove the change helped.
+- **Where your evidence goes:** `submission/`. Commit your "before" before you change anything.
+
+## Good to know
+
+- Do not run `/new-course`. The sample course is already built, and a new course costs a lot of
+  tokens.
+- Doing task 5a instead? This repo has the finished quiz agent. Write yours before you open
+  `.claude/agents/assessment-designer.md` here.
+- Below is the general project manual. Use it for setup (**What you need**) and when something goes
+  wrong (**Troubleshooting**).
+
+---
+
+## About the project
 
 Turn one request into a reviewed course package: a viability brief, a syllabus, a lecture deck,
 a quiz with an answer key, a hands-on lab, and a QA report. Every output is a markdown file and a
