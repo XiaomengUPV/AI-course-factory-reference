@@ -55,12 +55,16 @@ bash scripts/readiness-check.sh                  # macOS or Linux
 
 ## Run it
 
+You do not need this section for task 5b. It makes a new course from scratch, which costs a lot of
+tokens. If you try it, use a new topic: the sample course already uses "Intro to Python lists, high
+school".
+
 1. Open a terminal in this folder and start `claude`. Agents, commands and hooks load when a session
    starts, so start a new session after you change any of them.
 2. Start a course:
 
    ```
-   /new-course Intro to Python lists, level: high school, modules: 1
+   /new-course Intro to SQL, level: high school, modules: 1
    ```
 
    Modules are 1 to 4 and default to 2. You can add `capstone: ...` if you already know what the
