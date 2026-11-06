@@ -2,7 +2,7 @@
 """Render a course's markdown artifacts to PDF.
 
 Markdown stays the master (STYLE.md "Files and naming"). Markdown in, PDF out,
-nothing authored here. Ported from the puffo-education-pipeline renderer.
+nothing authored here. Ported from the earlier pipeline's renderer.
 
 Run it through uv so no system Python is needed (or use run.ps1 / run.sh):
 

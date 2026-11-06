@@ -1,6 +1,6 @@
 # Plan: Course Factory Lite
 
-A lighter rebuild of the puffo-education-pipeline use case. Same job, same gates, no Puffo,
+A lighter rebuild of an earlier education pipeline. Same job, same gates, no chat platform,
 runs entirely inside Claude Code (CLI) or Claude Desktop (Code tab). Every output is a
 markdown file plus a PDF.
 
@@ -27,7 +27,7 @@ machinery.
 
 | Reference piece | Lite decision | Why |
 | --- | --- | --- |
-| Puffo spaces, daemon, souls, DMs | Cut | Claude Code session replaces all of it |
+| Chat platform spaces, daemon, souls, DMs | Cut | Claude Code session replaces all of it |
 | 9 agents | Keep 8, cut video-producer | No video in lite |
 | Workshop vs course lane | One lane, 1 to 4 modules, 3 gates | Simpler to run and explain |
 | Gate 0, Gate 1, Gate 2 | Keep | You asked for the gates |
@@ -155,7 +155,7 @@ courses/{slug}/
   qa/             qa-report.md  alignment-matrix.md  ta-grounding-manifest.md
   maintenance/    ta-digest-<date>.md
   dist/           PDFs mirroring the folders above
-reference/                    the cloned puffo repo, gitignored, read only
+reference/                    a clone of the earlier pipeline, gitignored, not shipped
 run.ps1 / run.sh              render wrappers
 ```
 

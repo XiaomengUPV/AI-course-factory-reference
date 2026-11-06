@@ -165,6 +165,6 @@ what you recommend. Do not fix content yourself and do not loosen a check to get
 
 ## Developing this repo
 
-`PLAN.md` is the build plan. `reference/` is a read-only clone of the original pipeline. Tests:
+`PLAN.md` is the build plan. Tests:
 `python -m unittest discover -s scripts -p "test_*.py"`. `courses/_fixture` is a sample course the
-tests copy, never edit it casually. Commit and push small chunks as you go.
+tests copy, never edit it casually. Commit small chunks as you go, and push only when the human asks.
