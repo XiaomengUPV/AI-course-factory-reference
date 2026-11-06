@@ -32,7 +32,8 @@ change helped.
    When Gate 2 opens, read the PDFs and reply in plain words.
 6. **Measure after.** Copy the new `qa/qa-report.md` to `submission/qa-report-after.md`, score the
    same 10 concepts again, and run
-   `python scripts/check_package.py intro-python-lists-hs --through package --no-pdf`.
+   `python scripts/check_package.py intro-python-lists-hs --through package --no-pdf`. One minor
+   `HEADING-CASE` finding on the deck is a known false positive.
 7. **Write** `submission/report.md`: your trace, the cause, the change, your prediction, and what
    happened.
 
@@ -66,7 +67,7 @@ This is a lighter rebuild of an earlier pipeline. `PLAN.md` explains what was ke
 
 - Git, [uv](https://docs.astral.sh/uv/), Google Chrome (the renderer prints PDFs through it), and
   Claude Code signed in.
-- Python 3 on your path, for the check scripts.
+- Python 3.9 or newer on your path, for the check scripts.
 - Cost: a one-module course used about 1.1 million subagent tokens in the first run on Sonnet.
   Three agents are set to Opus in their files, so a default run costs more. Edit the `model:` line
   of an agent to change it.
