@@ -1,18 +1,43 @@
 # Course Factory Lite: challenge task reference
 
 > [!IMPORTANT]
-> This repo is for **task 5b** of the FDE Learning Kit. **Start with the kit, not here:** read
-> [Page 05](https://github.com/AzurePartnersOrg/fde-learning-kit/blob/main/education-content-creation/05-hands-on-practice/README.md),
-> then follow the steps in the
-> [5b challenge brief](https://github.com/AzurePartnersOrg/fde-learning-kit/blob/main/education-content-creation/05-hands-on-practice/5b-challenge-brief.md).
+> This repo is for **task 5b** of the FDE Learning Kit. If you have not yet, read
+> [Page 05](https://github.com/AzurePartnersOrg/fde-learning-kit/blob/main/education-content-creation/05-hands-on-practice/README.md)
+> first. Then follow the steps below.
 
 ## Your task
 
-- **What you get:** the full project. Every agent is here, and the sample course
-  `courses/intro-python-lists-hs/` is complete.
-- **What you do:** find where depth is lost between the research and the slides, fix the agent
-  where it happens, and prove the change helped.
-- **Where your evidence goes:** `submission/`. Commit your "before" before you change anything.
+Every agent is here, and the sample course `courses/intro-python-lists-hs/` is complete. Find where
+depth is lost between the research and the slides, fix the agent where it happens, and prove the
+change helped.
+
+## Steps
+
+1. **Save your baseline.** Copy `courses/intro-python-lists-hs/qa/qa-report.md` to
+   `submission/qa-report-before.md`. Score 10 concepts from the deck for depth, 1 to 4 (the scale is
+   on Page 06), in `submission/slide-scores.csv`. Commit before you change anything.
+2. **Trace one concept.** Pick a topic marked `explain` in
+   `courses/intro-python-lists-hs/01-syllabus/syllabus.md`. Follow it through the source pack, the
+   syllabus, the deck, the quiz and lab, and the QA report, and find the stage where the depth drops.
+3. **Find the cause** in that stage's agent in `.claude/agents/` and its template in `templates/`.
+4. **Change one thing.** Before you run anything, write down what you expect to change.
+5. **Rerun.** Start a new `claude` session in this folder (agents load when a session starts) and
+   ask, with the name of the agent you changed:
+
+   ```
+   Move intro-python-lists-hs back to in-production and rerun deck-writer for module 1
+   with its updated instructions. Then render, run the checker, and run QA.
+   ```
+
+   When Gate 2 opens, read the PDFs and reply in plain words.
+6. **Measure after.** Copy the new `qa/qa-report.md` to `submission/qa-report-after.md`, score the
+   same 10 concepts again, and run
+   `python scripts/check_package.py intro-python-lists-hs --through package --no-pdf`.
+7. **Write** `submission/report.md`: your trace, the cause, the change, your prediction, and what
+   happened.
+
+The [5b challenge brief](https://github.com/AzurePartnersOrg/fde-learning-kit/blob/main/education-content-creation/05-hands-on-practice/5b-challenge-brief.md)
+has the same steps with the trace table, hints, and how it is graded.
 
 ## Good to know
 
@@ -53,34 +78,7 @@ powershell -File scripts/readiness-check.ps1     # Windows
 bash scripts/readiness-check.sh                  # macOS or Linux
 ```
 
-## Run it
-
-You do not need this section for task 5b. It makes a new course from scratch, which costs a lot of
-tokens. If you try it, use a new topic: the sample course already uses "Intro to Python lists, high
-school".
-
-1. Open a terminal in this folder and start `claude`. Agents, commands and hooks load when a session
-   starts, so start a new session after you change any of them.
-2. Start a course:
-
-   ```
-   /new-course Intro to SQL, level: high school, modules: 1
-   ```
-
-   Modules are 1 to 4 and default to 2. You can add `capstone: ...` if you already know what the
-   learner should build.
-3. Research runs, then the producer opens **Gate 0** and shows you a short request with PDF paths to
-   read. Read the PDFs under `courses/<slug>/dist/`.
-4. Reply in plain words. "yes", "good to go" or "looks great" approves. Anything else is treated as
-   feedback: the notes go back to the agent, it revises, and the gate opens again.
-5. The same happens at **Gate 1** (syllabus) and **Gate 2** (the finished package). Between gates
-   the agents work on their own, and the checker and a QA reviewer must pass before Gate 2 opens.
-6. After Gate 2 the course is published and the TA agent is available.
-
-If you close the session mid-run, `STATUS.md` remembers where you were. Start a new session and use
-`/continue`.
-
-### Commands
+## Commands
 
 | Command | What it does |
 | --- | --- |
@@ -114,8 +112,9 @@ PDFs: one for students, and one with the speaker notes for the instructor. Instr
 
 ## How it keeps itself honest
 
-- **Gates.** Agents cannot approve anything. Only your reply to a pending gate is logged, in your own
-  words, by `scripts/approve.py`. A hook blocks agents from writing out of order.
+- **Gates.** Agents cannot approve anything. Only your reply to a pending gate (Gate 0, Gate 1 or
+  Gate 2) is logged, in your own words, by `scripts/approve.py`. A hook blocks agents from writing
+  out of order.
 - **Sources.** Every product claim has an `SP-` ID, a mechanism and a source the researcher opened.
   Gaps are declared, not filled.
 - **Checks.** `scripts/check_package.py` runs the mechanical rules at no token cost, and a QA agent
