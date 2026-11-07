@@ -2,7 +2,7 @@
 
 > [!IMPORTANT]
 > This repo is for **task 5b** of the FDE Learning Kit. If you have not yet, read
-> [Page 05](https://github.com/AzurePartnersOrg/fde-learning-kit/blob/main/education-content-creation/05-hands-on-practice/README.md)
+> [Page 05](https://github.com/AzurePartnersOrg/fde-learning-kit/blob/main/ai-course-factory/05-hands-on-practice/README.md)
 > first. Then follow the steps below.
 
 ## Your task
@@ -37,7 +37,7 @@ change helped.
 7. **Write** `submission/report.md`: your trace, the cause, the change, your prediction, and what
    happened.
 
-The [5b challenge brief](https://github.com/AzurePartnersOrg/fde-learning-kit/blob/main/education-content-creation/05-hands-on-practice/5b-challenge-brief.md)
+The [5b challenge brief](https://github.com/AzurePartnersOrg/fde-learning-kit/blob/main/ai-course-factory/05-hands-on-practice/5b-challenge-brief.md)
 has the same steps with the trace table, hints, and how it is graded.
 
 ## Good to know
